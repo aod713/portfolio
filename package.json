@@ -1,8 +1,8 @@
 {
-  "name": "noxfolio-next",
+  "name": "abi-prospa-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Noxfolio - a personal portfolio template rebuilt with Next.js, TypeScript and Tailwind CSS.",
+  "description": "Abi Prospa personal portfolio built with Next.js, TypeScript and Tailwind CSS.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

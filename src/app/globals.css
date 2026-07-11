@@ -1,26 +1,146 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --base-color: rgba(255, 255, 255, 0.65);
+  --heading-color: #ffffff;
+  --primary-color: #c9f31d;
+  --lighter-color: #1f1f1f;
+  --black-color: #070707;
+  --border-color: rgba(255, 255, 255, 0.1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  body {
+    @apply bg-body font-body text-base text-[16px] leading-[30px] antialiased;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading text-heading;
+  }
+
+  h1 {
+    @apply text-h1;
+  }
+  h2 {
+    @apply text-h2;
+  }
+  h3 {
+    @apply text-h3;
+  }
+  h4 {
+    @apply text-h4;
+  }
+  h5 {
+    @apply text-h5;
+  }
+  h6 {
+    @apply text-h6;
+  }
+
+  a {
+    @apply text-base transition-colors duration-500 hover:text-primary;
+  }
+
+  ::selection {
+    @apply bg-primary text-ink;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .theme-btn {
+    @apply relative z-[1] inline-flex items-center justify-center overflow-hidden
+           rounded-btn bg-primary px-[35px] py-[10px] text-center font-body
+           font-semibold capitalize text-ink transition-all duration-500
+           hover:opacity-90 max-sm:px-[25px] max-sm:py-[8px];
+  }
+  .theme-btn i {
+    @apply ml-[10px] transition-all duration-500;
+  }
+  .theme-btn:hover i {
+    @apply ml-[13px] -mr-[3px];
+  }
+
+  .theme-btn--outline {
+    @apply bg-transparent text-base ring-1 ring-line hover:bg-primary hover:text-ink;
+  }
+
+  .read-more {
+    @apply inline-flex items-center text-[14px] capitalize text-heading transition-colors hover:text-primary;
+  }
+  .read-more i {
+    @apply ml-[7px] mt-[2px] transition-all duration-500;
+  }
+  .read-more:hover i {
+    @apply ml-[10px];
+  }
+
+  .details-btn {
+    @apply inline-block h-[50px] w-[50px] -rotate-45 rounded-full border border-line
+           bg-body text-center leading-[50px] text-heading transition-all duration-500
+           hover:bg-primary hover:text-ink;
+  }
+
+  .sub-title {
+    @apply mb-[15px] block font-medium text-base;
+  }
+
+  .for-bgc-black {
+    @apply mx-auto max-w-[1620px] bg-ink;
+  }
+
+  .list-style-one li {
+    @apply flex items-center font-medium text-white max-[375px]:text-[16px] min-[376px]:text-[20px];
+  }
+  .list-style-one li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Pro";
+    @apply mr-[12px] mt-[2px] leading-none text-primary;
+  }
+  .list-style-one li:not(:last-child) {
+    @apply mb-[20px];
+  }
+  .list-style-one.two-column {
+    @apply flex flex-wrap;
+  }
+  .list-style-one.two-column li {
+    @apply w-full max-[479px]:w-full min-[480px]:w-[48%];
+  }
+
+  .list-style-two li {
+    @apply flex items-center max-[375px]:text-[16px] min-[376px]:text-[20px];
+  }
+  .list-style-two li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Pro";
+    @apply mr-[20px] flex h-[30px] w-[30px] items-center justify-center rounded-full
+           bg-primary text-[16px] text-lighter;
+  }
+  .list-style-two li:not(:last-child) {
+    @apply mb-[25px];
+  }
+
+  .bg-lines {
+    @apply pointer-events-none absolute inset-0 -z-[1];
+  }
+  .bg-lines span {
+    @apply absolute top-0 h-full w-px bg-white/5;
+    animation: bgLineShift 18s infinite;
+  }
+}
+
+@keyframes bgLineShift {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(30px);
+  }
 }
