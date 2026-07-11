@@ -1,6 +1,11 @@
+/**
+ * PostCSS configuration.
+ * Tailwind processes our utility classes, autoprefixer adds vendor prefixes.
+ */
 const config = {
   plugins: {
-    "@tailwindcss/postcss": {},
+    tailwindcss: {},
+    autoprefixer: {},
   },
 };
 
