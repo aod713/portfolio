@@ -170,7 +170,7 @@ export default function HomeOnePage() {
               />
               <div className="grid gap-x-12 gap-y-8 md:grid-cols-2">
                 {resumeItems.map((item, i) => (
-                  <Reveal key={item.role} delay={0.2 + (i % 2) * 0.1}>
+                  <Reveal key={`${item.company}-${item.years}`} delay={0.2 + (i % 2) * 0.1}>
                     <div className="flex gap-5 border-b border-line pb-8">
                       <i className="far fa-arrow-right mt-1 text-primary" />
                       <div>
