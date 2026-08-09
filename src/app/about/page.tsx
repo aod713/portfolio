@@ -89,7 +89,7 @@ export default function AboutPage() {
                     Digital Products
                   </>
                 }
-                text="I'm Abiodun Prosper — a full-stack developer with 4+ years shipping production web and mobile products across fintech, eCommerce and internal tools. I take your idea from Figma design to deployed, documented code: brand, website, app and the automations that run them."
+                text="I'm Aminuodun Prosper — a full-stack developer with 4+ years shipping production web and mobile products across fintech, eCommerce and internal tools. I take your idea from Figma design to deployed, documented code: brand, website, app and the automations that run them."
               />
               <ul className="list-style-one two-column gap-y-5 pb-[30px]">
                 <li>Branding &amp; UI/UX Design</li>
@@ -138,7 +138,7 @@ export default function AboutPage() {
                     height={40}
                     className="rounded-full"
                   />
-                  <h6>Abiodun Prosper</h6>
+                  <h6>Aminuodun Prosper</h6>
                   <i className="fas fa-arrow-right text-primary" />
                 </div>
               </div>

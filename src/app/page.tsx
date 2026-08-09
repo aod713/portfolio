@@ -33,7 +33,7 @@ export default function HomeOnePage() {
                 Hello, i&apos;m
               </span>
               <h1 className="mb-5 max-lg:text-[45px]">
-                <b>Abi Prospa</b> full-stack developer
+                <b>Aminu Daniel</b> full-stack developer
               </h1>
               <p className="mb-8">
                 I build brands, websites, mobile apps and the automations that run
@@ -62,7 +62,7 @@ export default function HomeOnePage() {
                 <div className="absolute bottom-0 left-1/2 -z-10 h-[80%] w-[80%] -translate-x-1/2 rounded-full bg-primary/90" />
                 <Image
                   src="/assets/images/hero/me.png"
-                  alt="Abi Prospa"
+                  alt="Aminu Daniel"
                   width={500}
                   height={620}
                   priority
@@ -138,7 +138,7 @@ export default function HomeOnePage() {
                   </div>
                   <div className="absolute bottom-8 left-4 flex items-center gap-3 rounded-xl bg-lighter px-4 py-3">
                     <Image src="/assets/images/about/btn-image2.png" alt="" width={40} height={40} className="rounded-full" />
-                    <h6>Abiodun Prosper</h6>
+                    <h6>Aminuodun Prosper</h6>
                     <i className="fas fa-arrow-right text-primary" />
                   </div>
                 </div>

@@ -23,15 +23,15 @@ export const mainNav: NavItem[] = [
 ];
 
 export const siteInfo = {
-  name: "Abi Prospa",
+  name: "Aminu Daniel",
   logo: "/assets/images/logos/logo.png",
-  email: "Abiodunprosper07@gmail.com",
-  phone: "+234 703 915 7861",
-  address: "Lagos, Nigeria - Working worldwide (remote)",
+  email: "aminud422@gmail.com",
+  phone: "+353 899 698 760",
+  address: "Dublin, Ireland - Working worldwide (remote)",
   socials: [
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/abiodun-prosper-aa1428261/", icon: "fab fa-linkedin-in" },
-    { label: "X", href: "https://x.com/Abi_Prospa", icon: "fab fa-twitter" },
-    { label: "Instagram", href: "https://www.instagram.com/abi_prosper/", icon: "fab fa-instagram" },
-    { label: "TikTok", href: "https://www.tiktok.com/@abiprosper", icon: "fab fa-tiktok" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/Aminuodun-prosper-aa1428261/", icon: "fab fa-linkedin-in" },
+    { label: "X", href: "https://x.com/Aminu_Daniel", icon: "fab fa-twitter" },
+    { label: "Instagram", href: "https://www.instagram.com/Aminu_prosper/", icon: "fab fa-instagram" },
+    { label: "TikTok", href: "https://www.tiktok.com/@Aminuprosper", icon: "fab fa-tiktok" },
   ],
 };
