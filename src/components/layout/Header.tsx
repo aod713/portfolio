@@ -115,7 +115,7 @@ export function Header() {
   return (
     <header
       className={`left-0 top-0 z-[999] w-full transition-all duration-500 ${
-        stuck ? "fixed animate-fadeInDown bg-lighter shadow-[0_0_30px_rgba(87,95,245,0.1)]" : "absolute bg-transparent"
+        stuck ? "fixed animate-fadeInDown bg-lighter shadow-[0_0_30px_rgba(96,165,250,0.1)]" : "absolute bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-container-wide items-center px-[25px] xl:px-[55px]">

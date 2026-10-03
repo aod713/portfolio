@@ -24,7 +24,7 @@ const config: Config = {
         body: "#131313",
         lighter: "#1F1F1F",
         ink: "#070707",
-        primary: "#C9F31D",
+        primary: "#60A5FA",
         heading: "#FFFFFF",
         base: "rgba(255, 255, 255, 0.65)",
         line: "rgba(255, 255, 255, 0.1)",

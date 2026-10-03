@@ -56,7 +56,7 @@ export default function HomeOnePage() {
               ))}
             </Reveal>
 
-            {/* Author image with lime circle backdrop */}
+            {/* Author image with primary-colour circle backdrop */}
             <Reveal animation="fadeIn" delay={0.3} className="lg:col-span-5">
               <div className="relative mx-auto flex max-w-md items-end justify-center">
                 <div className="absolute bottom-0 left-1/2 -z-10 h-[80%] w-[80%] -translate-x-1/2 rounded-full bg-primary/90" />
