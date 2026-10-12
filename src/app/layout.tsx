@@ -24,7 +24,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Aminu Daniel - Full-Stack Developer | Web, Mobile, Branding & Automations",
   description:
-    "Aminuodun Prosper (Aminu Daniel) builds brands, websites, mobile apps and business automations for startups and small businesses — design to deployed code, end to end.",
+    "AOD  DANIEL (Aminu Daniel) builds brands, websites, mobile apps and business automations for startups and small businesses — design to deployed code, end to end.",
   icons: {
     icon: "/assets/images/favicon.png",
   },
