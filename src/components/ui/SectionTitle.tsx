@@ -3,7 +3,7 @@ import { type ReactNode } from "react";
 type SectionTitleProps = {
   /** Small eyebrow text above the heading (e.g. "About Me"). */
   subtitle?: string;
-  /** The heading. Wrap words in <span> to colour them lime, like the design. */
+  /** The heading. Wrap words in <span> to apply the primary accent colour. */
   title: ReactNode;
   /** Optional paragraph below the heading. */
   text?: ReactNode;
@@ -15,7 +15,7 @@ type SectionTitleProps = {
 /**
  * SectionTitle – the eyebrow + H2 + paragraph block that introduces nearly
  * every section. Highlighted words inside `title` should be wrapped in a
- * <span className="text-primary"> to match the original lime accent.
+ * <span className="text-primary"> to apply the project accent colour.
  */
 export function SectionTitle({
   subtitle,

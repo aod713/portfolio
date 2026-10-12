@@ -2,24 +2,38 @@
 
 import { useState, type FormEvent } from "react";
 
-type Status = "idle" | "success";
+type Status = "idle" | "sending" | "success" | "error";
 
 /**
  * ContactForm – the "Let's Talk" form used on the homepage and contact page.
  *
- * It is a controlled React form. On submit we prevent the default browser
- * navigation, show a success message and reset the fields. To make it send
- * real email, replace the body of `handleSubmit` with a fetch() to a Next.js
- * Route Handler (see /docs in the README).
+ * Submissions are delivered by FormSubmit (formsubmit.co) straight to the
+ * site inbox — the first submission after each new deploy domain triggers a
+ * one-time activation email that must be confirmed before delivery starts.
  */
+const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/Abiodunprosper07@gmail.com";
+
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    // TODO: POST the form data to your API route here.
-    setStatus("success");
-    event.currentTarget.reset();
+    const form = event.currentTarget;
+    setStatus("sending");
+    try {
+      const data = new FormData(form);
+      data.append("_subject", "New portfolio contact message");
+      const res = await fetch(FORMSUBMIT_ENDPOINT, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) throw new Error(`FormSubmit responded ${res.status}`);
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
   }
 
   const fieldClass =
@@ -31,7 +45,7 @@ export function ContactForm() {
         <label htmlFor="name" className="mb-2 block text-base">
           Full Name
         </label>
-        <input id="name" name="name" type="text" required placeholder="Richard D. Hammond" className={fieldClass} />
+        <input id="name" name="name" type="text" required placeholder="Your name" className={fieldClass} />
       </div>
       <div>
         <label htmlFor="email" className="mb-2 block text-base">
@@ -43,7 +57,7 @@ export function ContactForm() {
         <label htmlFor="phone" className="mb-2 block text-base">
           Phone Number
         </label>
-        <input id="phone" name="phone" type="text" required placeholder="+880 (123) 456 88" className={fieldClass} />
+        <input id="phone" name="phone" type="text" placeholder="+234 800 000 0000" className={fieldClass} />
       </div>
       <div>
         <label htmlFor="subject" className="mb-2 block text-base">
@@ -55,14 +69,19 @@ export function ContactForm() {
         <label htmlFor="message" className="mb-2 block text-base">
           Message
         </label>
-        <textarea id="message" name="message" rows={4} required placeholder="write message" className={fieldClass} />
+        <textarea id="message" name="message" rows={4} required placeholder="Tell me about your project" className={fieldClass} />
       </div>
       <div className="md:col-span-2">
-        <button type="submit" className="theme-btn">
-          Send Us Message <i className="far fa-angle-right" />
+        <button type="submit" className="theme-btn" disabled={status === "sending"}>
+          {status === "sending" ? "Sending…" : "Send Message"} <i className="far fa-angle-right" />
         </button>
         {status === "success" && (
           <p className="mt-4 text-primary">Thanks! Your message has been sent.</p>
+        )}
+        {status === "error" && (
+          <p className="mt-4 text-red-500">
+            Something went wrong — please email me directly at Abiodunprosper07@gmail.com.
+          </p>
         )}
       </div>
     </form>
